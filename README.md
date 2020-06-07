@@ -12,6 +12,16 @@
 
 2. Even or odd
    What is the Big O of the following algorithm? Explain your answer
-   `function isEven(value) { if (value % 2 === 0) { return true; } else return false; } }`
+
+```
+   function isEven(value) {
+      if (value % 2 === 0) {
+         return true;
+      } else
+      return false;
+      }
+   }
+
+```
 
 `This is constant time, O(1), as it involves a simple mathematical operation and the function is called only once`
