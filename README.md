@@ -86,4 +86,86 @@ function createPairs(arr) {
 }
 ```
 
-`Another example with two (nested) for loops. This algorithm is O(N^2)`
+`Another example with two (nested) for loops. Time complexity increases exponentially depending on inputs and this algorithm is O(N^2)`
+
+7. Compute the sequence
+   What does the following algorithm do? What is its runtime complexity? Explain your answer
+
+```
+function compute(num) {
+    let result = [];
+    for (let i = 1; i <= num; i++) {
+
+        if (i === 1) {
+            result.push(0);
+        }
+        else if (i === 2) {
+            result.push(1);
+        }
+        else {
+            result.push(result[i - 2] + result[i - 3]);
+        }
+    }
+    return result;
+}
+```
+
+`This algorithm computes the Fibonacci sequence from 1 up to the input number. The loop will run only one time even though its referencing the saved values from previous iterations. This version has a time complexity of O(N).`
+
+8. An efficient search
+   In this example, we return to the problem of searching using a more sophisticated approach than in naive search, above. Assume that the input array is always sorted. What is the Big O of the following algorithm? Explain your answer
+
+```
+function efficientSearch(array, item) {
+    let minIndex = 0;
+    let maxIndex = array.length - 1;
+    let currentIndex;
+    let currentElement;
+
+    while (minIndex <= maxIndex) {
+        currentIndex = Math.floor((minIndex + maxIndex) / 2);
+        currentElement = array[currentIndex];
+
+        if (currentElement < item) {
+            minIndex = currentIndex + 1;
+        }
+        else if (currentElement > item) {
+            maxIndex = currentIndex - 1;
+        }
+        else {
+            return currentIndex;
+        }
+    }
+    return -1;
+}
+```
+
+`This is an example of O(log(N)). As with each iteration, the size of the input is cut in half.`
+
+9. Random element
+   What is the Big O of the following algorithm? Explain your answer
+
+```
+function findRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+```
+
+`This is an efficient O(1) and runs at a constant time as it takes only one step to access the array item and multiply it by the constant`
+
+10. What Am I?
+    What does the following algorithm do? What is the Big O of the following algorithm? Explain your answer
+
+```
+function isWhat(n) {
+    if (n < 2 || n % 1 !== 0) {
+        return false;
+    }
+    for (let i = 2; i < n; ++i) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+```
+
+`This algorithm determines whether n is a prime number or not. It will run n times for each and is therefore O(N).`
