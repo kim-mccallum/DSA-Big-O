@@ -196,7 +196,17 @@ const towerOfHanoi = (height, sourceRod, destinationRod, auxRod) => {
 ```
 
 If you are given 5 disks, how do the rods look like after 7 recursive calls?
+
 `Rod A - 2 largest disks, Rod B - Empty, Rod C - 3 disks (smallest disks)`
 
 How many moves are needed to complete the puzzle with 3 disks? with 4 disks? with 5 disks?
+
 `3 disks - 7 moves 4 disks - 15 moves 5 disks - 31 moves`
+
+What is the runtime of your algorithm?
+
+`This algorithm is O(2^N)`
+
+12. Iterative version
+    Solve the drills 1 - 7 from your previous checkpoint (Recursion) iteratively.
+    `These are contained: iterative-versions.js`
